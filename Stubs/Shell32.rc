@@ -1,0 +1,751 @@
+196 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+
+	"Cancel",  0
+}
+}
+
+197 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Copy Here",  14
+	"&Move Here",  15
+
+	"Cancel",  0
+}
+}
+
+198 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Copy Here",  7
+	"Create Active &Desktop Images Here",  13
+
+	"Cancel",  0
+}
+}
+
+199 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Copy Here",  7
+	"&Move Here",  8
+	"Create &Shortcuts Here",  11
+	"Create Active &Desktop items Here",  12
+
+	"Cancel",  0
+}
+}
+
+200 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Move Here",  2
+	"&Copy Here",  1
+	"Create &Shortcuts Here",  3
+
+	"Cancel",  0
+}
+}
+
+201 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Move Here",  2
+
+	"Cancel",  0
+}
+}
+
+202 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Move Here",  2
+	"Make Sync &Copy",  9
+	"Create &Shortcuts Here",  3
+
+	"Cancel",  0
+}
+}
+
+203 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Map Network Here",  3
+
+	"Cancel",  0
+}
+}
+
+205 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Create Scrap Here",  4
+	"&Move Scrap Here",  5
+	"&Create Document Shortcut Here",  6
+
+	"Cancel",  0
+}
+}
+
+206 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Copy Here",  7
+	"&Move Here",  8
+	"Create &Shortcuts Here",  11
+
+	"Cancel",  0
+}
+}
+
+207 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Move Here",  2
+	"Make Sync &Copy",  9
+	"Make Sync Copy of &Type...",  10
+	"Create &Shortcuts Here",  3
+
+	"Cancel",  0
+}
+}
+
+208 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"&Open With", 1 | MFS_DEFAULT
+	"", 65535
+	"Cancel", 0
+}
+}
+
+209 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"Make Sync &Copy",  9
+	"&Move Here",  2
+	"Create &Shortcuts Here",  3
+
+	"Cancel",  0
+}
+}
+
+210 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"Cu&t", 24
+	"&Copy", 25
+	"&Paste", 26
+	"", 65535
+	"Create &Shortcut", 16
+	"&Delete", 17
+	"Rena&me", 18
+	"", 65535
+}
+}
+
+211 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"P&roperties", 19
+}
+}
+
+215 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	POPUP "&View", 28674, 0
+	{
+		"Filmstri&p", 28719
+		"T&humbnails", 28717
+		"Tile&s", 28718
+		"Ico&ns", 28713
+		"&List", 28715
+		"&Details", 28716
+	}
+	"", 65535
+	POPUP "Arrange &Icons By", 28673, 0
+	{
+		"", 30208
+		"Show in &Groups", 30209
+		"&Auto Arrange", 28753
+		"A&lign to Grid", 28756
+	}
+	"R&efresh", 28931
+	"", 65535
+	"Customize This &Folder...", 28722
+	"", 65535
+	"&Paste", 28698
+	"Paste &Shortcut", 28700
+	"&Undo", 28699
+}
+}
+
+216 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 32768, 0
+{
+	"Create &Shortcut", 28688
+	"&Delete", 28689
+	"Rena&me", 28690
+	"P&roperties", 28691
+}
+POPUP "", 32832, 0
+{
+	"&Undo\tCtrl+Z", 28699
+	"", 65535
+	"Cu&t\tCtrl+X", 28696
+	"&Copy\tCtrl+C", 28697
+	"&Paste\tCtrl+V", 28698
+	"Paste &Shortcut", 28700
+	"", 65535
+	"Copy To &Folder...", 28702
+	"Mo&ve To Folder...", 28703
+	"", 65535
+	"Select &All\tCtrl+A", 28705
+	"&Invert Selection", 28706
+}
+POPUP "", 32896, 0
+{
+	"Filmstri&p", 28719
+	"T&humbnails", 28717
+	"Tile&s", 28718
+	"Ico&ns", 28713
+	"&List", 28715
+	"&Details", 28716
+	"", 65535
+	POPUP "Arrange &Icons by", 28673, 0
+	{
+		"none", 65535
+		"", 30208
+		"Show in &Groups", 30209
+		"&Auto Arrange", 28753
+		"A&lign to Grid", 28756
+	}
+	"", 65535
+	"&Choose Details...", 28723
+	"Customize This &Folder...", 28722
+}
+POPUP "", 33024, 0
+{
+	"&Help and Support Center", 28785
+}
+}
+
+217 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 32832, 0
+{
+	"&Undo\tCtrl+Z", 28699
+	"", 65535
+}
+POPUP "", 32832, 0
+{
+	"&Paste\tCtrl+V", 28698
+	"Paste &Shortcut", 28700
+	"", 65535
+	"Select &All\tCtrl+A", 28705
+	"&Invert Selection", 28706
+}
+POPUP "", 32896, 0
+{
+	"Filmstri&p", 28719
+	"T&humbnails", 28717
+	"Tile&s", 28718
+	"Ico&ns", 28713
+	"&List", 28715
+	"&Details", 28716
+	"", 65535
+	POPUP "Arrange &Icons by", 28673, 0
+	{
+		"none", 65535
+		"", 30208
+		"Show in &Groups", 30209
+		"&Auto Arrange", 28753
+		"A&lign to Grid", 28756
+	}
+	"", 65535
+	"&Choose Details...", 28723
+	"Customize This &Folder...", 28722
+}
+POPUP "", 33024, 0
+{
+	"&Help and Support Center", 28785
+}
+}
+
+218 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"Show &Desktop Icons", 29698
+	"Lock Web &Items on Desktop", 29699
+	"&Run Desktop Cleanup Wizard", 29700
+}
+}
+
+220 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"P&roperties", 0
+}
+}
+
+223 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	POPUP "Se&nd To", 79, 0
+	{
+		"Empty", 80
+	}
+}
+}
+
+225 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"Map &Network Drive...",  13
+	"D&isconnect Network Drive...",  9
+}
+}
+
+226 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"R&estore", 139
+}
+}
+
+227 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 32768, 0
+{
+	"", 65535
+	"Empty Recycle &Bin", 141
+}
+}
+
+229 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"&Files or Folders...", 4
+	"&Computer...", 5
+}
+}
+
+232 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Map Network Drive...",  13,  GRAYED
+}
+}
+
+233 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Open",  25
+	"Co&nnect...",  14
+}
+}
+
+247 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"Form&at...",  8
+	"&Disconnect",  9
+	"E&ject",  10
+}
+}
+
+248 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"", 65535
+	POPUP "Run as...", 32, 0
+	{
+		"&Add Printer", 34
+		"Server Proper&ties", 35
+	}
+	"", 65535
+	"&Add Printer", 22
+	"Server Proper&ties", 21
+	"Send Fa&x", 23
+	"Set Up Fa&xing", 24
+	"Install a Local Fa&x Printer", 31
+}
+}
+
+250 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "&Briefcase", 147, 0
+{
+	"Update &All...", 148
+	"&Update Selection", 149
+	"", 65535
+	"&Split from Original", 150
+}
+}
+
+258 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"S&ave Search", 6
+}
+}
+
+259 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"Open Conta&ining Folder", 7
+}
+}
+
+260 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"Se&lect", 0
+}
+}
+
+261 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 32768, 0
+{
+	"", 65535
+	"Write &these files to CD", 143
+	"Delete temporary &files", 144
+	"Er&ase this CD-RW", 145
+}
+}
+
+303 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "&File", 65535, 0
+{
+	"", 65535
+	"Open Conta&ining Folder", 40960
+	"", 65535
+	"S&ave Search", 40963
+	"", 65535
+	"&Close", 40964
+}
+POPUP "&Edit", 65535, 0
+{
+	"", 65535
+}
+POPUP "&View", 65535, 0
+{
+	"", 65535
+}
+POPUP "&Options", 65535, 0
+{
+	"&Case Sensitive", 40961
+}
+POPUP "&Help", 65535, 0
+{
+	"&What's This?", 40967
+}
+}
+
+304 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "&File", 65535, 0
+{
+	"", 65535
+	"Open Containing &Folder", 40960
+	"", 65535
+	"&Close", 40964
+}
+POPUP "&Edit", 65535, 0
+{
+	"", 65535
+}
+POPUP "&View", 65535, 0
+{
+	"", 65535
+}
+POPUP "&Options", 65535, 0
+{
+	"", 65535
+}
+POPUP "&Help", 65535, 0
+{
+	"&What's This?", 40967
+}
+}
+
+305 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 305, 0
+{
+	"&Open", 1
+	"O&pen All Users", 3
+	"&Explore", 2
+	"E&xplore All Users", 4
+	"", 65535
+	"&Delete", 5
+	"Rena&me", 6
+	"", 65535
+	"P&roperties", 7
+}
+}
+
+351 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Open",  25
+}
+}
+
+353 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"&Open", 25
+	"", 65535
+	POPUP "Run as...", 32, 0
+	{
+		"&Open", 36
+		"", 65535
+		"Pause Printin&g", 38
+		"Ca&ncel All Documents", 47
+		"", 65535
+		"S&haring...", 33
+		"&Use Printer Offline", 40
+		"", 65535
+		"&Delete", 48
+		"", 65535
+		"P&roperties", 49
+	}
+	"", 65535
+	"Conn&ect...", 14
+	"", 65535
+	"Set as De&fault Printer", 18
+	"Printing Pr&eferences...", 20
+	"", 65535
+	"Pause Printin&g", 27
+	"Ca&ncel All Documents", 30
+	"", 65535
+	"S&haring...", 19
+	"&Use Printer Offline", 29
+}
+}
+
+355 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Install",  3
+
+	"Cancel",  0
+}
+}
+
+356 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Print",  1
+
+	"Cancel",  0
+}
+}
+
+357 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "&Printer"
+{
+	"P&roperties",  115
+
+	"&Close",  2
+}
+POPUP "&Document"
+{
+	"P&ause Printing",  130
+	"&Cancel Printing",  132
+}
+POPUP "&View"
+{
+	"&Status Bar",  140
+}
+POPUP "&Help"
+{
+	"&Help Topics...",  150
+
+	"&About Windows",  151
+}
+}
+
+359 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"Open",  20480
+	"Explore",  20481
+
+	"Open All Users",  20482
+	"Explore All Users",  20483
+}
+}
+
+360 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Open",  25
+	"Run &as...",  32
+}
+}
+
+362 MENU
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP ""
+{
+	"&Add Printer",  22
+	"Run as...",  34
+}
+}
+
+400 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 400, 0
+{
+	"Make &Available Offline", 41218
+	"S&ynchronize", 41219
+	"&Properties", 41220
+	"", 65535
+	"Customize My &Desktop", 41224
+	"", 65535
+	"Open in &New Window", 41217
+	"", 65535
+	"&Restore", 41228
+	"Sp&lit Desktop With Icons", 41227
+	"C&over Desktop", 41226
+	"", 65535
+	"&Close", 41225
+}
+}
+
+401 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"My Documents", 516
+	"My Pictures", 518
+	"", 65535
+}
+}
+
+402 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"", 65535
+	"&Open Folder", 517
+}
+}
+
+500 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	POPUP "&View", 65535, 0
+	{
+		"&Logos", 3
+		"Lar&ge Icons", 1
+		"S&mall Icons", 2
+	}
+	"&Open Folder", 6
+	"Show Te&xt", 4
+}
+}
+
+501 MENUEX
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+{
+POPUP "", 0, 0
+{
+	"Sort &by Name", 1
+}
+}
+
