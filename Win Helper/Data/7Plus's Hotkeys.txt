@@ -1,0 +1,113 @@
+Type	Off?	Running	Name
+-------------------------------------------------------------------
+reg			^p
+k-hook			^Backspace
+k-hook			^Delete
+k-hook			*Space
+k-hook			*Space up
+k-hook			*Left
+k-hook			*Left up
+k-hook			*Right
+k-hook			*Right up
+k-hook			*Down
+k-hook			*Down up
+k-hook			*Up
+k-hook			*Up up
+m-hook			*RButton
+m-hook			*RButton up
+k-hook			*RWin
+k-hook			*RWin up
+k-hook			*LWin
+k-hook			*LWin up
+m-hook			*WheelUp
+m-hook			*WheelUp up
+m-hook			*WheelDown
+m-hook			*WheelDown up
+m-hook			!LButton
+m-hook			LButton
+m-hook			~RButton UP
+m-hook			RButton
+k-hook			Enter
+k-hook			Return
+k-hook			#e
+m-hook			^MButton
+m-hook			+MButton
+m-hook			MButton
+m-hook			WheelUp
+m-hook			WheelDown
+k-hook			^i UP
+k-hook			+Enter
+k-hook			#+Left
+k-hook			#+Up
+k-hook			#+Right
+k-hook			#+Down
+joypoll			Joy1
+joypoll			Joy2
+joypoll			Joy3
+joypoll			Joy4
+joypoll			Joy5
+joypoll			Joy6
+joypoll			Joy7
+joypoll			Joy8
+k-hook			^t
+k-hook			^Tab Up
+k-hook			^+Tab Up
+k-hook			^w
+k-hook			$#H
+k-hook			$#Q
+k-hook			$+C
+k-hook			$+X
+k-hook			$Backspace
+k-hook			$#C
+k-hook			$!C
+k-hook			$^!C
+k-hook			$+!C
+k-hook			$^+!C
+k-hook			$F7
+k-hook			$F8
+k-hook			$F3
+k-hook			$^S
+k-hook			$CapsLock
+k-hook			$!F5
+m-hook			$!WheelUp
+m-hook			$!WheelDown
+k-hook			$!Space
+k-hook			$Numpad0
+k-hook			$Numpad1
+k-hook			$Numpad2
+k-hook			$Numpad3
+k-hook			$Numpad4
+k-hook			$Numpad5
+k-hook			$Numpad6
+k-hook			$Numpad7
+k-hook			$Numpad8
+k-hook			$Numpad9
+k-hook			$^Numpad0
+k-hook			$^Numpad1
+k-hook			$^Numpad2
+k-hook			$^Numpad3
+k-hook			$^Numpad4
+k-hook			$^Numpad5
+k-hook			$^Numpad6
+k-hook			$^Numpad7
+k-hook			$^Numpad8
+k-hook			$^Numpad9
+k-hook			$!Numpad0
+k-hook			$!Numpad1
+k-hook			$!Numpad2
+k-hook			$!Numpad3
+k-hook			$!Numpad4
+k-hook			$!Numpad5
+k-hook			$!Numpad6
+k-hook			$!Numpad7
+k-hook			$!Numpad8
+k-hook			$!Numpad9
+k-hook			$#Insert
+k-hook			$!Insert
+k-hook			$^U
+k-hook			$#V
+k-hook			$!F4
+k-hook			$^V
+k-hook			$R
+k-hook			$L
+k-hook			$F6

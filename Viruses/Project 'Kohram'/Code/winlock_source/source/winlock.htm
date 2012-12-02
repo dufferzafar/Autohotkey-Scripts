@@ -1,0 +1,337 @@
+<HTML>
+<HEAD>
+<TITLE>Lock Windows Desktop</TITLE>
+</HEAD>
+
+<BODY>
+<BLOCKQUOTE>
+<H1>Lock Windows Desktop</H1>
+<b>by António Feijão</b>
+<P><B>Restricting windows access by hidding desktop windows and disabling special keys.</B></P>
+
+
+<FONT face=verdana>
+<FONT size=3><B><P>Introduction</P></B><FONT size=2>
+<P align=justify>I manage a system where I need to restrict users from accessing the desktop and running other applications.
+The search for ways to acheive this returned several different techniques.
+Although in the end I didn't use any of the techniques described here, I decided to compile all the code in 
+one application for everyone how should need it.</P>
+<P align=justify><B>Note:</B> I don't claim to be the author of any of the code presented in this article. The application is a compilation
+of several sources and I will try to acknowledge the authors whenever possible.</P>
+
+<FONT size=3><B><P>I. Hidding Desktop Windows</P></B><FONT size=2>
+<P align=justify>Hidding the Windows Desktop, Taskbar, Start Button,..., is generally acheived by passing the window handle 
+returned by <I>FindWindow()</I> to <I>ShowWindow()</I>.</P>
+<P align=justify>If, for example, you want to hide the Taskbar you can use the following code:</P>
+
+<PRE><FONT size=2>	ShowWindow(FindWindow("Shell_TrayWnd", NULL), SW_HIDE);</PRE>
+
+<P align=justify>If you want to hide the Start Button, you have to know the button control id first and use the same technique:</P>
+
+<PRE><FONT size=2>	ShowWindow(GelDlgItem(FindWindow("Shell_TrayWnd", NULL), 0x130), SW_HIDE);</PRE>
+
+<P align=justify>How do I know that the Taskbar class name is "Shell_TrayWnd" or that the Start Button id is 0x130 ? I used
+the Spy++ utility that comes with Microsoft Visual C++ 6.0. You can use this technique for any window or
+control you wish to hide.</P>
+<P align=justify>If you want just to disable the window, and not hidding it, change the <I>ShowWindow()</I> call to <I>EnableWindow()</I>.</P>
+
+<P align=justify>You will see that if you hide the Desktop and the Taskbar, the Start Menu still pop up when you press the Win
+key or double click the desktop area. To find out how to prevent this unwanted behaviour you have to read 
+the next section.</P>
+
+<FONT size=3><B><P>II. Disabling System Keys</P></B><FONT size=2>
+<P align=justify>I call system keys all the special key combinations that the operating system (OS) use to switch between tasks 
+or bring up the Task Manager.</P>
+<P align=justify>There are several ways to disable these key combinations.</P>
+
+<P><B>Win9x/Me</B></P>
+<P align=justify>You can disable all these key combinations (including Ctrl+Alt+Del) by fooling the operating system into
+thinking the screen saver is running. This can be acomplished with the following code:</P>
+
+<PRE><FONT size=2>	SystemParametersInfo(SPI_SETSCREENSAVERRUNNING, TRUE, &bOldState, 0);</PRE>
+
+<P align=justify>This trick doesn't work in Windows NT or higher (Win NT+) so you need other techniques.</P>
+
+<P><B>Hooks</B></P>
+<P align=justify>In Win NT+ one way to trap key switching combinations is to write a keyboard hook. You install a keyboard
+hook by calling <I>SetWindowsHookEx()</I>:</P>
+
+<PRE><FONT size=2>	hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD, KeyboardProc, hInstance, 0);</PRE>
+
+<P align=justify>The KeyboardProc() function is a CALLBACK function that is called by the OS every time a key is pressed.
+Inside KeyboardProc() you decide if you want to trap the key or let the OS (or the next application in the 
+hook chain) process it:</P>
+<PRE><FONT size=2>	LRESULT KeyboardProc(...)
+	{
+	   if (Key == VK_SOMEKEY)
+		return 1;             // Trap key
+
+	  return CallNextHookEx(...); // Let the OS handle it
+	}
+</PRE>
+<P align=justify>To release the hook you use:</P>
+
+<PRE><FONT size=2>	UnhookWindowsHookEx(hKeyboardHook);</PRE>
+
+<P align=justify>There are two type of hooks: local and global (or system wide) hooks. Local hooks can only trap events for your
+application, while global hooks can trap events for all the running applications.</P>
+<P align=justify>To trap the switching task keys it's necessary to write a global hook.</P>
+<P align=justify>The Microsoft documentation states that global hook procedures should be placed in a separate DLL. The DLL is
+then mapped into the context of every process and can trap the events for each process -- that's why hooks are
+used to inject code into a remote process.</P>
+<P align=justify>In my application I wanted to avoid the use of an external library so I
+setted the global hook inside my own application (without an external library). This is acomplished by passing
+in the 3rd parameter of the <I>SetWindowsHookEx()</I> call the instance handle of the application (and not the library
+as the documentation states). This technique works perfectly for Win 9x but Win NT+ is different. The same
+effect can be acheived by using the new keyboard and mouse low level hooks. These new hooks don't need and
+external library because they work differently from the other hooks. The documentation states "[...] the 
+WH_KEYBOARD_LL  hook is not injected into another process. Instead, the context switches back to the process 
+that installed the hook and it is called in its original context. Then the context switches back to the application 
+that generated the event.".</P>
+<P align=justify>I'm not going into more details about hooks because there are many excelent articles dealing with this subject.</P>
+
+<P align=justify>There's still one remaining problem: keyboard hooks cannot trap Ctrl+Alt+Del sequence ! Why ? Because the OS
+never sends this key combination to the keyboard hook chain. It is handled at a different level in the OS
+and is never sended to applications. So, how can we trap the Ctrl+Alt+Del key combination ? Read the next section
+to find out.</P>
+
+<P><B>Ctrl+Alt+Del</B></P>
+<P align=justify>There are several ways to disable this key combination:</P>
+<UL>
+<P>1. Disable Task Manager.<BR>This doesn't trap the key combination, it simply disables the application (Task Manager)
+that pop up when this key combination is pressed. See below how to do this.</P>
+<P>2. Trap the keys using a keyboard device driver.<BR>For this you need the DDK installed. I will not describe this method here.</P>
+<P>3. Write a GINA stub.<BR>GINA is the DLL that Winlogon uses to perform user authentication. I'm not going to discuss
+this method here, but you can find out how to it here <A href="#16">[16]</A>.</P>
+<P>4. Subclass the SAS window of the Winlogon process.<BR>For this you must inject code into the Winlogon process 
+and then subclass it's Window Procedure. Two techniques for doing this are described latter.</P>
+</UL>
+<P><B>Disable Task Manager</B></P>
+<P align=justify>To disable the Task Manager you only have to enable the policy "Remove Task Manager" either using the
+Group Policy editor (gpedit.msc) or setting the registry entry. Inside my application I used the registry
+functions to set the value for the following key:</P>
+
+<PRE><FONT size=2>	HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableTaskMgr:DWORD</PRE>
+
+<P align=justify>Set it to 1 to disable Task Manager and 0 (or delete key) to enable it again.</P>
+
+<P><B>Subclassing Winlogon's SAS window</B></P>
+<P align=justify>You subclass a windows procedure by calling</P>
+
+<PRE><FONT size=2>	SetWindowLong(hWnd, GWL_WNDPROC, NewWindowProc);</PRE>
+
+<P align=justify>The call only works for windows create by your application, i.e., you cannot subclass windows belonging
+to other processes (the address of <I>NewWindowProc()</I> is only valid for the process that called the <I>SetWindowLong()</I>
+function).</P>
+<P align=justify>So, how can we subclass Winlogon SAS window ?</P>
+<P align=justify>The answer is: you have to somehow map the address of <I>NewWindowProc()</I> into the address space of 
+the remote process and pass it to the <I>SetWindowLong()</I> call.</p>
+<P align=justify>The technique of mapping memory into the address space of a remote process is called Injection.</P>
+<P align=justify>Injection can be acompished with the following ways:</P>
+<UL>
+<P>1. Registry. 
+   To inject a DLL into a process simply add the DLL name to the registry key
+<PRE><FONT size=2>	HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs:STRING</PRE>
+   This method is only supported on Windows NT or higher.
+<P>2. Injecting a DLL using hooks.
+   This method is supported by all Windows versions.
+<P>3. Injecting a DLL using <I>CreateRemoteThread()</I>/<I>LoadLibrary()</I>.
+   Only usable in Windows NT or higher.
+<P>4. Copy the code directly to the remote process using <I>WriteProcessMemory()</I> and start its execution by calling 
+   <I>CreateRemoteThread()</I>.
+   Only usable in Windows NT or higher.
+</UL>
+<P align=justify>My prefered injection technique is the last one. It has the advantage of not needing an external DLL.
+To properly work this method requires very careful coding of the functions you are injecting onto the remote process.
+To help you to avoid common pitfalls of this technique I inserted some tips at the beginning of the source code.
+For people who think this method is too dangerous I included also the <I>CreateRemoteThread()</I>/<I>LoadLibrary()</I> method.
+Just #define DLL_INJECT and the application will use this method instead.</P>
+
+<P align=justify>After injecting the code into Winlogon's subclassing the SAS window reduces too:</P>
+<UL>
+1. Getting the SAS window handle: <PRE><FONT size=2>      hSASWnd = FindWindow("SAS Window class", "SAS window");</PRE>
+2. Subclass the SAS window procedure: <PRE><FONT size=2>      SetWindowLong(hSASWnd, GWL_WNDPROC, NewSASWindowProc);</PRE>
+3. Inside <I>NewSASWindowProc()</I> trap the WM_HOTKEY message and return 1 for the Ctrl+Alt+Del key combination:
+<PRE><FONT size=2>      LRESULT CALLBACK NewSASWindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+      {
+  	   if (uMsg == WM_HOTKEY)
+  	   {
+            // Ctrl+Alt+Del
+            if (lparam == MAKELONG(MOD_CONTROL | MOD_ALT, VK_DELETE))
+               return 1;
+  	   }
+  	   return CallWindowProc(OldSASWindowProc, hWnd, wParam, lParam);
+	}
+</PRE>
+</UL>
+<FONT size=3><B><P>Other Techniques</P></B><FONT size=2>
+<P><B>1. RegisterHotKey()/Me</B></P>
+I only managed to disable Alt+Tab and Alt+Esc key combinations using this method.
+
+<P><B>2. SystemParametersInfo(SPI_SETSWITCHTASKDISABLE/SPI_SETFASTTASKSWITCH)</B></P>
+In all the versions I tried this method never worked !
+
+<P><B>3. Switch to a new desktop</B></P>
+With this technique you create a new desktop and switch to it. Because the other processes
+(normally) run on the "Default" desktop (Winlogon runs on the "Winlogon" desktop and the 
+screen saver runs on the "Screen-saver" desktop) this has the effect on effectively locking 
+the windows desktop until the process that runs in the new desktop has finished.
+
+The following code describes the steps necessary to create and switch to a new desktop
+and run a thread/process in it:
+<PRE><FONT size=2>	// Save original desktop
+	hOriginalThread = GetThreadDesktop(GetCurrentThreadId());
+	hOriginalInput = OpenInputDesktop(0, FALSE, DESKTOP_SWITCHDESKTOP);
+
+	// Create a new Desktop and switch to it
+	hNewDesktop = CreateDesktop("NewDesktopName", NULL, NULL, 0, GENERIC_ALL, NULL);
+	SetThreadDesktop(hNewDesktop);
+	SwitchDesktop(hNewDesktop);
+
+	// Execute thread/process in the new desktop
+	StartThread();
+	StartProcess();
+
+	// Restore original desktop
+	SwitchDesktop(hOriginalInput);
+	SetThreadDesktop(hOriginalThread);
+
+	// Close the Desktop
+	CloseDesktop(hNewDesktop);
+</PRE>
+To assign a desktop to a thread <I>SetThreadDesktop(hNewDesktop)</I> must be called from within the
+running thread. To run a process in the new desktop the <I>lpDesktop</I> member of the <I>STARTUPINFO</I>
+structure passed to <I>CreateProcess()</I> must be setted to the name of the desktop.
+
+<FONT size=3><B><P>References</P></B><FONT size=2>
+<P>1. "Disabling Keys in Windows XP with Trapkeys" by Paul DiLascia<BR>
+<A href="http://msdn.microsoft.com/msdnmag/issues/02/09/CQA/default.aspx">http://msdn.microsoft.com/msdnmag/issues/02/09/CQA/default.aspx</A></P>
+
+<P>2. "Trapping CtrlAltDel; Hide Application in Task List on Windows 2000/XP" by Jiang Sheng<BR>
+<A href="http://www.codeproject.com/useritems/preventclose.asp">http://www.codeproject.com/useritems/preventclose.asp</A></P>
+
+<P>3. "Three ways to inject your code into another process" by Robert Kuster<BR>
+<A href="http://www.codeproject.com/threads/winspy.asp">http://www.codeproject.com/threads/winspy.asp</A></P>
+
+<P>4. "Hooks and DLLs" by Joseph M. Newcomer<BR>
+<A href="http://www.codeproject.com/dll/hooks.asp">http://www.codeproject.com/dll/hooks.asp</A></P>
+
+<P>5. "Keyboard Hooks" by H. Joseph<BR>
+<A href="http://www.codeproject.com/dll/keyboardhook.asp">http://www.codeproject.com/dll/keyboardhook.asp</A></P>
+
+<P>6. "An All-Purpose Keyboard Hooker" by =[ Abin ]=<BR>
+<A href="http://www.codeproject.com/system/KeyHook.asp">http://www.codeproject.com/system/KeyHook.asp</A></P>
+
+<P>7. "Hooking the Keyboard" by Anoop Thomas<BR>
+<A href="http://www.codeguru.com/Cpp/W-P/system/keyboard/article.php/c5699/">http://www.codeguru.com/Cpp/W-P/system/keyboard/article.php/c5699/</A></P>
+
+<P>8. "HOOK - A HowTo for setting system wide hooks" by Volker Bartheld<BR>
+<A href="http://www.codeguru.com/Cpp/W-P/system/misc/article.php/c5685/">http://www.codeguru.com/Cpp/W-P/system/misc/article.php/c5685/</A></P>
+
+<P>9. "Systemwide Windows Hooks without external DLL" by RattleSnake<BR>
+<A href="http://neworder.box.sk/newsread.php?newsid=10952">http://neworder.box.sk/newsread.php?newsid=10952</A></P>
+
+<P>10. "Cross Process Subclassing" by Venkat Mani<BR>
+<A href="http://www.codeproject.com/dll/subhook.asp">http://www.codeproject.com/dll/subhook.asp</A></P>
+
+<P>11. "How to subclass Unicode Windows from ANSI Application" by Mumtaz Zaheer<BR>
+<A href="http://www.codeproject.com/win32/safesubclassing.asp">http://www.codeproject.com/win32/safesubclassing.asp</A></P>
+
+<P>12. "Disabling the Alt-Tab key combination" by Dan Crea<BR>
+<A href="http://www.codeguru.com/Cpp/misc/misc/keyboard/article.php/c433/">http://www.codeguru.com/Cpp/misc/misc/keyboard/article.php/c433/</A></P>
+
+<P>13. "Hiding/Showing the Windows Taskbar" by Ashutosh R. Bhatikar<BR>
+<A href="http://www.codeguru.com/Cpp/W-P/system/taskbar/article.php/c5747/">http://www.codeguru.com/Cpp/W-P/system/taskbar/article.php/c5747/</A></P>
+
+<P>14. "Protecting Windows NT Machines" by Vishal Khapre<BR>
+<A href="http://www.codeguru.com/Cpp/W-P/system/security/article.php/c5737/">http://www.codeguru.com/Cpp/W-P/system/security/article.php/c5737/</A></P>
+
+<P>15. "Disabling the Windows Start Button" by Aaron Young<BR>
+<A href="http://www.codeguru.com/vb/controls/vb_shell/article.php/c3045/">http://www.codeguru.com/vb/controls/vb_shell/article.php/c3045/</A></P>
+
+<P><a name="#16">16. "Using GINA.DLL to Spy on Windows User Name & Password And to Disable SAS (Ctrl+Alt+Del)" by Fad B<BR>
+<A href="http://www.codeproject.com/useritems/GINA_SPY.asp">http://www.codeproject.com/useritems/GINA_SPY.asp</A></P>
+
+<P>17. "Adding Your Logo to Winlogon's Dialog" by Chat Pokpirom<BR>
+<A href="http://www.codeguru.com/Cpp/W-P/system/misc/article.php/c5683/">http://www.codeguru.com/Cpp/W-P/system/misc/article.php/c5683/</A></P>
+
+<FONT size=3><B><P>Final Notes</P></B><FONT size=2>
+<P align=justify>In the introduction I refered that at the end I didn't use none of the techniques described in this article.</P>
+<P align=justify>The strongest method of securing the windows desktop is to change the system shell by your own shell (that is, 
+by your own application).</P>
+<P align=justify>In Windows 9x edit the file <I>c:\windows\system.ini</I> and in the <I>[boot]</I> section
+change the key <I>shell=Explorer.exe</I> by <I>shell=MyShell.exe</I>.</P>
+<P align=justify>In Windows NT or higher you can replace the shell by editing the following Registry key</P>
+
+<PRE><FONT size=2>	HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell:STRING=Explorer.Exe</PRE>
+
+<P align=justify>This is a global change and affect all users. To affect only certain users
+edit the following Registry key:</P>
+
+<PRE><FONT size=2>	HKLM\Software\Microsoft\WindowsNT\CurrentVersion\Winlogon\Userinit:STRING=UserInit.Exe</PRE>
+
+<P align=justify>Change the value of <I>Userinit.exe</I> by <I>MyUserInit.exe</I></P>
+
+<P align=justify>Here's the code for <I>MyUserInit</I>:</P>
+<TABLE width="90%"><TD vAlign=center><TD bgColor=#cccccc><PRE>
+#include &lt;windows.h&gt;
+#include &lt;Lmcons.h&gt;
+
+#define  BACKDOORUSER	  TEXT("smith")
+#define  DEFAULTUSERINIT  TEXT("USERINIT.EXE")
+#define  NEWUSERINIT	  TEXT("MYUSERINIT.EXE")
+
+int main()
+{
+    STARTUPINFO         si;
+    PROCESS_INFORMATION pi;
+    TCHAR               szPath[MAX_PATH+1];
+    TCHAR               szUserName[UNLEN+1];
+    DWORD               nSize;
+
+    // Get system directory
+    szPath[0] = TEXT('\0');
+    nSize = sizeof(szPath) / sizeof(TCHAR);
+    if (!GetSystemDirectory(szPath, nSize))
+        strcpy(szPath, "C:\\WINNT\\SYSTEM32");
+    strcat(szPath, "\\");
+
+    // Get user name
+    szUserName[0] = TEXT('\0');
+    nSize = sizeof(szUserName) / sizeof(TCHAR);
+    GetUserName(szUserName, &nSize);
+
+    // Is current user the backdoor user ?
+    if (!stricmp(szUserName, BACKDOORUSER))
+        strcat(szPath, DEFAULTUSERINIT);
+    else
+        strcat(szPath, NEWUSERINIT);
+
+    // Zero these structs
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    ZeroMemory(&pi, sizeof(pi));
+
+    // Start the child process
+    if (!CreateProcess(NULL,    // No module name (use command line). 
+                       szPath,  // Command line. 
+                       NULL,    // Process handle not inheritable. 
+                       NULL,    // Thread handle not inheritable. 
+                       FALSE,   // Set handle inheritance to FALSE. 
+                       0,       // No creation flags. 
+                       NULL,    // Use parent's environment block. 
+                       NULL,    // Use parent's starting directory. 
+                       &si,     // Pointer to STARTUPINFO structure.
+                       &pi))    // Pointer to PROCESS_INFORMATION structure.
+    {
+        return -1;
+    }
+
+    // Close process and thread handles
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+    return 0;
+}</PRE></TD></TABLE>
+</BODY>
+</HTML>
