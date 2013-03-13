@@ -19,6 +19,8 @@ SetWorkingDir %A_ScriptDir%		;Ensures a consistent starting directory.
 
 SetBatchLines, -1
 
+
+FileInstall,match.png,match.png,1
 ;############################################################# Global Variables
 ; Start gdi+
 If !pToken := Gdip_Startup()
@@ -52,10 +54,10 @@ Gdip_DeleteFontFamily(hFamily)
 Width := Gdip_GetImageWidth(pBitmap), Height := Gdip_GetImageHeight(pBitmap)
 
 ;Gap Between matches
-gap := 100
+gap := 50
 
 ;Dimensions of canvas
-cWidth := gap*13
+cWidth := gap*21
 
 ;Normal GDI+ Sh!t that i never understood
 hbm := CreateDIBSection(cWidth, Height), hdc := CreateCompatibleDC()
@@ -65,15 +67,16 @@ Gdip_SetInterpolationMode(G, 7)
 ;Create Buttons GUI
 Gui, 2: Font, s18
 Gui, 2: Add, Text,   x12, How many match(es) do you want to pick? 
-Gui, 2: Add, Button, xp+80   yp+50 w80 h50 gTakeMatch1, 1
+Gui, 2: Add, Button, xp+20   yp+50 w80 h50 gTakeMatch1, 1
 Gui, 2: Add, Button, xp+110  yp  wp  hp    gTakeMatch2, 2
 Gui, 2: Add, Button, xp+110  yp  wp  hp    gTakeMatch3, 3
+Gui, 2: Add, Button, xp+110  yp  wp  hp    gTakeMatch4, 4
 Gui, 2: +AlwaysOnTop +ToolWindow +LastFound
 Gui, 2: Show, x100 y500, Choose Matches
 mainGuiID := WinExist()
 RemoveMenu(hWnd, 0xF010) ;Disable Moving
 
-matches := 13
+matches := 21
 GoSub, DrawMatches
 
 
@@ -106,6 +109,11 @@ TakeMatch3:
 	GoSub, TakeMatch
 Return
 
+TakeMatch4:
+	pick := 4
+	GoSub, TakeMatch
+Return
+
 TakeMatch:
 	Gui, 2:Cancel
 	
@@ -116,11 +124,11 @@ TakeMatch:
 	
 	Sleep, 2000	
 	
-	ShowMessage("I Pick " . 4-pick)
+	ShowMessage("I Pick " . 5-pick)
 	
 	Sleep, 1000
 	
-	matches := matches - (4-pick)
+	matches := matches - (5-pick)
 	GoSub, DrawMatches
 	
 	If matches = 1
