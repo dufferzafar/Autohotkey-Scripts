@@ -1,14 +1,15 @@
 /*
-			syncWPL				
-	Copy 
+					syncWPL						 
+	Copy MP3 files from a WPL file to a directory
 
-4:51 PM Monday, March 18, 2013  
+by dufferzafar
+5:28 PM Monday, March 18, 2013
 */
 
 #NoEnv  						;Recommended for performance.
 #SingleInstance Force			;Make single instance application.
 #Persistent						;Keep running until the user asks to exit.
-; #NoTrayIcon						;Ensures that no icon is visible at the start.
+#NoTrayIcon						;Ensures that no icon is visible at the start.
 SetWorkingDir %A_ScriptDir%		;Ensures a consistent starting directory.
 
 SetBatchLines -1
@@ -20,6 +21,9 @@ SetBatchLines -1
 
 ;############################################################# Variables
 
+;The WPL fileCount
+wplFile := "Best.wpl"
+
 ;The Destination Directory
 destRoot := "K:\Songs"
 
@@ -27,13 +31,11 @@ destRoot := "K:\Songs"
 musicDir := "C:\Users\dufferzafar\Downloads\Music"
 
 ;Read path of songs from the XML
-FileRead, xml, Best.wpl
+FileRead, xml, %wplFile%
 xpath_load(xml), filePaths := xpath(xml, "body/seq/media/@src/text()")
 
 ;Number of files
 fileCount :=  ( count, regexReplace(filePaths, "(`,)", "`,",count))
-
-x := Floor(A_ScreenWidth * 0.8)
 
 ;Create a basic progress window
 Progress, R0-%fileCount% M, Starting....., Your playlist is being synced, WPL Sync
