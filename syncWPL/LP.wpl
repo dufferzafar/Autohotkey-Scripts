@@ -1,0 +1,25 @@
+<?wpl version="1.0"?>
+<smil>
+    <head>
+        <meta name="Generator" content="Microsoft Windows Media Player -- 12.0.7601.17514"/>
+        <meta name="ItemCount" content="12"/>
+        <meta name="IsFavorite"/>
+        <meta name="ContentPartnerListID"/>
+        <meta name="ContentPartnerNameType"/>
+        <meta name="ContentPartnerName"/>
+        <meta name="Subtitle"/>
+        <author/>
+        <title>Landon Pigg</title>
+    </head>
+    <body>
+        <seq>
+            <media src="G:\Music\LP, ES\LP - Blue Skies.mp3" tid="{77D6AD4A-3EB8-4A29-BDA0-0C37D2ECD6C9}"/>
+            <media src="G:\Music\LP, ES\LP - Can&apos;t Let Go.mp3" tid="{9A5EE02F-75CD-4CB6-AB4D-7D1111683FC0}"/>
+            <media src="G:\Music\LP, ES\LP - Falling In Love At A Coffee Shop.mp3" tid="{258D07AB-0868-478E-BC86-D6581FEB9DEF}"/>
+            <media src="G:\Music\LP, ES\LP - Keep Looking Up.mp3" tid="{76AA2B27-C537-4537-BD88-714CE782AE3F}"/>
+            <media src="G:\Music\LP, ES\LP - The Boy Who Never.mp3" tid="{58469100-8653-447A-8961-C759DBEFB3CC}"/>
+            <media src="G:\Music\LP, ES\LP - The Way It Ends.mp3" tid="{462BD155-6A83-4CE1-A7D3-FD35F4988682}"/>
+            <media src="G:\Music\LP, ES\LP - This Far.mp3" tid="{F7BF748D-A620-4760-AD90-E0B3A44F05C1}"/>
+        </seq>
+    </body>
+</smil>

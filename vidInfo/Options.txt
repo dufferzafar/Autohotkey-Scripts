@@ -1,0 +1,677 @@
+General
+Count                     : Number of objects available in this stream
+StreamCount               : Number of streams of this kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : The ID for this stream in this file
+ID/String                 : The ID for this stream in this file
+UniqueID                  : The unique ID for this stream, should be copied with stream copy
+GeneralCount              : Number of general streams
+VideoCount                : Number of video streams
+AudioCount                : Number of audio streams
+TextCount                 : Number of text streams
+ChaptersCount             : Number of chapters streams
+ImageCount                : Number of image streams
+MenuCount                 : Number of menu streams
+Video_Format_List         : Video Codecs in this file, separated by /
+Video_Format_WithHint_Lis : Video Codecs in this file with popular name (hint), separated by /
+Video_Codec_List          : Deprecated, do not use in new projects
+Video_Language_List       : Video languagesin this file, full names, separated by /
+Audio_Format_List         : Audio Codecs in this file,separated by /
+Audio_Format_WithHint_Lis : Audio Codecs in this file with popular name (hint), separated by /
+Audio_Codec_List          : Deprecated, do not use in new projects
+Audio_Language_List       : Audio languages in this file separated by /
+Text_Format_List          : Text Codecs in this file, separated by /
+Text_Format_WithHint_List : Text Codecs in this file with popular name (hint),separated by /
+Text_Codec_List           : Deprecated, do not use in new projects
+Text_Language_List        : Text languages in this file, separated by /
+Chapters_Format_List      : Chapters Codecs in this file, separated by /
+Chapters_Format_WithHint_ : Chapters Codecs in this file with popular name (hint), separated by /
+Chapters_Codec_List       : Deprecated, do not use in new projects
+Chapters_Language_List    : Chapters languages in this file, separated by /
+Image_Format_List         : Image Codecs in this file, separated by /
+Image_Format_WithHint_Lis : Image Codecs in this file with popular name (hint), separated by /
+Image_Codec_List          : Deprecated, do not use in new projects
+Image_Language_List       : Image languages in this file, separated by /
+Menu_Format_List          : Menu Codecsin this file, separated by /
+Menu_Format_WithHint_List : Menu Codecs in this file with popular name (hint),separated by /
+Menu_Codec_List           : Deprecated, do not use in new projects
+Menu_Language_List        : Menu languages in this file, separated by /
+CompleteName              : Complete name (Folder+Name+Extension)
+FolderName                : Folder name only
+FileName                  : File name only
+FileExtension             : File extension only
+Format                    : Format used
+Format/String             : Deprecated, do not use in new projects
+Format/Info               : Info about this Format
+Format/Url                : Link to a description of this format
+Format/Extensions         : Known extensions of this format
+Format_Version            : Version of this format
+Format_Profile            : Profile of the Format
+Format_Settings           : Settings needed for decoder used
+CodecID                   : Codec ID (found in some containers)
+CodecID/Info              : Info about this codec
+CodecID/Hint              : A hint/popular name for this codec
+CodecID/Url               : A link to more details about this codec ID
+CodecID_Description       : Manual description given by the container
+Interleaved               : If Audio and video are muxed
+Codec                     : Deprecated, do not use in new projects
+Codec/String              : Deprecated, do not use in new projects
+Codec/Info                : Deprecated, do not use in new projects
+Codec/Url                 : Deprecated, do not use in new projects
+Codec/Extensions          : Deprecated, do not use in new projects
+Codec_Settings            : Deprecated, do not use in new projects
+Codec_Settings_Automatic  : Deprecated, do not use in new projects
+FileSize                  : File size in bytes
+FileSize/String           : File size (with measure)
+FileSize/String1          : File size (with measure, 1 digit mini)
+FileSize/String2          : File size (with measure, 2 digit mini)
+FileSize/String3          : File size (with measure, 3 digit mini)
+FileSize/String4          : File size (with measure, 4 digit mini)
+Duration                  : Play time of the stream in ms
+Duration/String           : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String1          : Play time in format : HHh MMmn SSs MMMms, XX omited if zero
+Duration/String2          : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String3          : Play time in format : HH:MM:SS.MMM
+OverallBitRate_Mode       : Bit rate mode of all streams (VBR, CBR)
+OverallBitRate_Mode/Strin : Bit rate mode of all streams (Variable, Constant)
+OverallBitRate            : Bit rate of all streams in bps
+OverallBitRate/String     : Bit rate of all streams (with measure)
+OverallBitRate_Minimum    : Minimum Bit rate in bps
+OverallBitRate_Minimum/St : Minimum Bit rate (with measurement)
+OverallBitRate_Nominal    : Nominal Bit rate in bps
+OverallBitRate_Nominal/St : Nominal Bit rate (with measurement)
+OverallBitRate_Maximum    : Maximum Bit rate in bps
+OverallBitRate_Maximum/St : Maximum Bit rate (with measurement)
+StreamSize                : Stream size in bytes
+StreamSize/String
+StreamSize/String1
+StreamSize/String2
+StreamSize/String3
+StreamSize/String4
+StreamSize/String5        : With proportion
+StreamSize_Proportion     : Stream size divided by file size
+HeaderSize
+DataSize
+FooterSize
+Album_ReplayGain_Gain     : The gain to apply to reach 89dB SPL on playback
+Album_ReplayGain_Gain/String
+Album_ReplayGain_Peak     : The maximum absolute peak value of the item
+Title                     : (Generic)Title of file
+Title/More                : (Generic)More info about the title of file
+Title/Url                 : (Generic)Url
+Domain                    : Univers movies belong to, e.g. Starwars, Stargate, Buffy, Dragonballs
+Collection                : Name of the series, e.g. Starwars movies, Stargate SG-1, Stargate Atlantis, Buffy, Angel
+Season                    : Name of the season, e.g. Strawars first Trilogy, Season 1
+Season_Position           : Number of the Season
+Season_Position_Total     : Place of the season e.g. 2 of 7
+Movie                     : Name of the movie. Eg : Starwars, a new hope
+Movie/More                : More infos about the movie
+Movie/Country             : Country, where the movie was procuced
+Movie/Url                 : Homepage for the movie
+Album                     : Name of an audio-album. Eg : The joshua tree
+Album/More                : More infos about the album
+Album/Sort
+Comic                     : Name of the comic.
+Comic/More
+Comic/Position_Total
+Part                      : Name of the part. e.g. CD1, CD2
+Part/Position             : Number of the part
+Part/Position_Total       : Place of the part e.g. 2 of 3
+Track                     : Name of the track. e.g. track1, track 2
+Track/More                : More infos about the track
+Track/Url                 : Link to a site about this track
+Track/Sort
+Track/Position            : Number of this track
+Track/Position_Total      : Place of this track, e.g. 3 of 15
+Chapter                   : Name of the chapter.
+SubTrack                  : Name of the subtrack.
+Original/Album            : Original name of album, serie...
+Original/Movie            : Original name of the movie
+Original/Part             : Original name of the part in the original support
+Original/Track            : Original name of the track in the original support
+Performer                 : Main performer/artist of this file
+Performer/Sort
+Performer/Url             : Homepage of the performer/artist
+Original/Performer        : Original artist(s)/performer(s).
+Accompaniment             : Band/orchestra/accompaniment/musician.
+Composer                  : Name of the original composer.
+Composer/Nationality      : Nationality of the main composer of the item, mostly for classical music.
+Arranger                  : The person who arranged the piece. e.g. Ravel.
+Lyricist                  : The person who wrote the lyrics for a musical item.
+Original/Lyricist         : Original lyricist(s)/text writer(s).
+Conductor                 : The artist(s) who performed the work. In classical music this would be the conductor, orchestra, soloists.
+Director                  : Name of the director.
+AssistantDirector         : Name of the assistant director.
+DirectorOfPhotography     : The name of the director of photography, also known as cinematographer.
+SoundEngineer             : The name of the sound engineer or sound recordist.
+ArtDirector               : The person who oversees the artists and craftspeople who build the sets.
+ProductionDesigner        : The person responsible for designing the Overall visual appearance of a movie.
+Choregrapher              : The name of the choregrapher.
+CostumeDesigner           : The name of the costume designer.
+Actor                     : Real name of an actor or actress playing a role in the movie.
+Actor_Character           : Name of the character an actor or actress plays in this movie.
+WrittenBy                 : The author of the story or script.
+ScreenplayBy              : The author of the screenplay or scenario (used for movies and TV shows).
+EditedBy                  : Editors name
+CommissionedBy            : name of the person or organization that commissioned the subject of the file
+Producer                  : Name of the producer of the movie.
+CoProducer                : The name of a co-producer.
+ExecutiveProducer         : The name of an executive producer.
+MusicBy                   : Main music-artist for a movie
+DistributedBy             : Company the item is mainly distributed by
+OriginalSourceForm/Distri : Name of the person or organization who supplied the original subject
+MasteredBy                : The engineer who mastered the content for a physical medium or for digital distribution.
+EncodedBy                 : Name of the person or organisation that encoded/ripped the audio file.
+RemixedBy                 : Name of the artist(s), that interpreted, remixed, or otherwise modified the item.
+ProductionStudio          : Main production studio
+ThanksTo                  : A very general tag for everyone else that wants to be listed.
+Publisher                 : Name of the organization publishing the album (i.e. the 'record label') or movie.
+Publisher/URL             : Publishers official webpage.
+Label                     : Brand or trademark associated with the marketing of music recordings and music videos.
+Genre                     : The main genre of the audio or video. e.g. classical, ambient-house, synthpop, sci-fi, drama, etc.
+Mood                      : Intended to reflect the mood of the item with a few keywords, e.g. Romantic, Sad, Uplifting, etc.
+ContentType               : The type of the item. e.g. Documentary, Feature Film, Cartoon, Music Video, Music, Sound FX, etc.
+Subject                   : Describes the topic of the file, such as Aerial view of Seattle..
+Description               : A short description of the contents, such as Two birds flying.
+Keywords                  : Keywords to the item separated by a comma, used for searching.
+Summary                   : A plot outline or a summary of the story.
+Synopsys                  : A description of the story line of the item.
+Period                    : Describes the period that the piece is from or about. e.g. Renaissance.
+LawRating                 : Depending on the country it's the format of the rating of a movie (P, R, X in the USA, an age in other countries or a URI defining a logo).
+LawRating_Reason          : Reason for the law rating
+ICRA                      : The ICRA rating. (Previously RSACi)
+Released_Date             : The date/year that the item was released.
+Original/Released_Date    : The date/year that the item was originaly released.
+Recorded_Date             : The time/date/year that the recording began.
+Encoded_Date              : The time/date/year that the encoding of this item was completed began.
+Tagged_Date               : The time/date/year that the tags were done for this item.
+Written_Date              : The time/date/year that the composition of the music/script began.
+Mastered_Date             : The time/date/year that the item was tranfered to a digitalmedium.
+File_Created_Date         : The time that the file was created on the file system
+File_Modified_Date        : The time that the file was modified on the file system
+Recorded_Location         : Location where track was recorded. (See COMPOSITION_LOCATION for format)
+Written_Location          : Location that the item was originaly designed/written. Information should be stored in the following format: country code, state/province, city where the coutry code is the same 2 octets as in Internet domains, or possibly ISO-3166. e.g. US, Texas, Austin or US, , Austin.
+Archival_Location         : Location, where an item is archived, e.eg. Louvre,Paris,France
+Encoded_Application       : Name of the software package used to create the file, such as Microsoft WaveEdit.
+Encoded_Application/Url   : Name of the software package used to create the file, such as Microsoft WaveEdit.
+Encoded_Library           : Software used to create the file
+Encoded_Library/String    : Software used to create the file
+Encoded_Library/Name      : Name of the the encoding-software
+Encoded_Library/Version   : Version of encoding-software
+Encoded_Library/Date      : Release date of software
+Encoded_Library_Settings  : Parameters used by the software
+Cropped                   : Describes whether an image has been cropped and, if so, how it was cropped.
+Dimensions                : Specifies the size of the original subject of the file. eg 8.5 in h, 11 in w
+DotsPerInch               : Stores dots per inch setting of the digitizer used to produce the file
+Lightness                 : Describes the changes in lightness settings on the digitizer required to produce the file
+OriginalSourceMedium      : Original medium of the material, e.g. vinyl, Audio-CD, Super8 or BetaMax
+OriginalSourceForm        : Original form of the material, e.g. slide, paper, map
+OriginalSourceForm/NumCol : Number of colors requested when digitizing, e.g. 256 for images or 32 bit RGB for video
+OriginalSourceForm/Name   : Name of the product the file was originally intended for
+OriginalSourceForm/Croppe : Describes whether an image has been cropped and, if so, how it was cropped. e.g. 16:9 to 4:3, top and bottom
+OriginalSourceForm/Sharpn : Identifies the changes in sharpness for the digitizer requiered to produce the file
+Tagged_Application        : Software used to tag this file
+BPM                       : Average number of beats per minute
+ISRC                      : International Standard Recording Code, excluding the ISRC prefix and including hyphens.
+ISBN                      : International Standard Book Number.
+BarCode                   : EAN-13 (13-digit European Article Numbering) or UPC-A (12-digit Universal Product Code) bar code identifier.
+LCCN                      : Library of Congress Control Number.
+CatalogNumber             : A label-specific catalogue number used to identify the release. e.g. TIC 01.
+LabelCode                 : A 4-digit or 5-digit number to identify the record label, typically printed as (LC) xxxx or (LC) 0xxxx on CDs medias or covers, with only the number being stored.
+Owner                     : Owner of the file
+Copyright                 : Copyright attribution.
+Copyright/Url             : Link to a site with copyright/legal information.
+Producer_Copyright        : The copyright information as per the productioncopyright holder.
+TermsOfUse                : License information, e.g., All Rights Reserved,Any Use Permitted.
+ServiceName
+ServiceChannel
+Service/Url
+ServiceProvider
+ServiceProviderr/Url
+ServiceType
+Cover                     : Is there a cover
+Cover_Description         : short descriptio, e.g. Earth in space
+Cover_Type
+Cover_Mime
+Cover_Data                : Cover, in binary format encoded BASE64
+Lyrics                    : Text of a song
+Comment                   : Any comment related to the content.
+Rating                    : A numeric value defining how much a person likes the song/movie. The number is between 0 and 5 with decimal values possible (e.g. 2.7), 5(.0) being the highest possible rating.
+Added_Date                : Date/year the item was added to the owners collection
+Played_First_Date         : The date, the owner first played an item
+Played_Last_Date          : The date, the owner last played an item
+Played_Count              : Number of times an item was played
+
+Video
+Count                     : Number of objects available in this stream
+StreamCount               : Number of streams of this kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : The ID for this stream in this file
+ID/String                 : The ID for this stream in this file
+UniqueID                  : The unique ID for this stream, should be copied with stream copy
+MenuID                    : The menu ID for this stream in this file
+MenuID/String             : The menu ID for this stream in this file
+Format                    : Format used
+Format/Info               : Info about Format
+Format/Url                : Link
+Format_Version            : Version of this format
+Format_Profile            : Profile of the Format
+Format_Settings           : Settings needed for decoder used, summary
+Format_Settings_BVOP      : Settings needed for decoder used, detailled
+Format_Settings_BVOP/Stri : Settings needed for decoder used, detailled
+Format_Settings_QPel      : Settings needed for decoder used, detailled
+Format_Settings_QPel/Stri : Settings needed for decoder used, detailled
+Format_Settings_GMC       : Settings needed for decoder used, detailled
+Format_Settings_GMC/String
+Format_Settings_Matrix    : Settings needed for decoder used, detailled
+Format_Settings_Matrix/St : Settings needed for decoder used, detailled
+Format_Settings_Matrix_Da : Matrix, in binary format encoded BASE64. Order = intra, non-intra, gray intra, gray non-intra
+Format_Settings_CABAC     : Settings needed for decoder used, detailled
+Format_Settings_CABAC/Str : Settings needed for decoder used, detailled
+Format_Settings_RefFrames : Settings needed for decoder used, detailled
+Format_Settings_RefFrames : Settings needed for decoder used, detailled
+Format_Settings_Pulldown  : Settings needed for decoder used, detailled
+MuxingMode                : How this file is muxed in the container
+CodecID                   : Codec ID (found in some containers)
+CodecID/Info              : Info on the codec
+CodecID/Hint              : Hint/popular name for this codec
+CodecID/Url               : Homepage for more details about this codec
+CodecID_Description       : Manual description given by the container
+Codec                     : Deprecated, do not use in new projects
+Codec/String              : Deprecated, do not use in new projects
+Codec/Family              : Deprecated, do not use in new projects
+Codec/Info                : Deprecated, do not use in new projects
+Codec/Url                 : Deprecated, do not use in new projects
+Codec/CC                  : Deprecated, do not use in new projects
+Codec_Profile             : Deprecated, do not use in new projects
+Codec_Description         : Deprecated, do not use in new projects
+Codec_Settings            : Deprecated, do not use in new projects
+Codec_Settings_PacketBitS : Deprecated, do not use in new projects
+Codec_Settings_BVOP       : Deprecated, do not use in new projects
+Codec_Settings_QPel       : Deprecated, do not use in new projects
+Codec_Settings_GMC        : Deprecated, do not use in new projects
+Codec_Settings_GMC/String : Deprecated, do not use in new projects
+Codec_Settings_Matrix     : Deprecated, do not use in new projects
+Codec_Settings_Matrix_Dat : Deprecated, do not use in new projects
+Codec_Settings_CABAC      : Deprecated, do not use in new projects
+Codec_Settings_RefFrames  : Deprecated, do not use in new projects
+Duration                  : Play time of the stream in ms
+Duration/String           : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String1          : Play time in format : HHh MMmn SSs MMMms, XX omited if zero
+Duration/String2          : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String3          : Play time in format : HH:MM:SS.MMM
+BitRate_Mode              : Bit rate mode (VBR, CBR)
+BitRate_Mode/String       : Bit rate mode (Variable, Cconstant)
+BitRate                   : Bit rate in bps
+BitRate/String            : Bit rate (with measurement)
+BitRate_Minimum           : Minimum Bit rate in bps
+BitRate_Minimum/String    : Minimum Bit rate (with measurement)
+BitRate_Nominal           : Nominal Bit rate in bps
+BitRate_Nominal/String    : Nominal Bit rate (with measurement)
+BitRate_Maximum           : Maximum Bit rate in bps
+BitRate_Maximum/String    : Maximum Bit rate (with measurement)
+Width                     : Width in pixel
+Width/String              : Width with measurement (pixel)
+Height                    : Height in pixel
+Height/String             : Width with measurement (pixel)
+PixelAspectRatio          : Pixel Aspect ratio
+PixelAspectRatio/String   : Pixel Aspect ratio
+DisplayAspectRatio        : Display Aspect ratio
+DisplayAspectRatio/String : Display Aspect ratio
+FrameRate_Mode            : Frame rate mode (CFR, VFR)
+FrameRate_Mode/String     : Frame rate mode (Constant, Variable)
+FrameRate                 : Frames per second
+FrameRate/String          : Frames per second (with measurement)
+FrameRate_Minimum         : Minimum Frames per second
+FrameRate_Minimum/String  : Minimum Frames per second (with measurement)
+FrameRate_Nominal         : Nominal Frames per second
+FrameRate_Nominal/String  : Nominal Frames per second (with measurement)
+FrameRate_Maximum         : Maximum Frames per second
+FrameRate_Maximum/String  : Maximum Frames per second (with measurement)
+FrameRate_Original        : Original (in the raw stream) Frames per second
+FrameRate_Original/String : Original (in the raw stream) Frames per second (with measurement)
+FrameCount                : Number of frames
+Standard                  : NTSC or PAL
+Resolution                : 16/24/32
+Resolution/String         : 16/24/32 bits
+Colorimetry
+ScanType
+ScanType/String
+ScanOrder
+ScanOrder/String
+Interlacement             : Deprecated, do not use in new projects
+Interlacement/String      : Deprecated, do not use in new projects
+Bits-(Pixel*Frame)        : bits/(Pixel*Frame) (like Gordian Knot)
+Delay                     : Delay fixed in the stream (relative) IN MS
+Delay/String              : Delay with measurement
+Delay/String1             : Delay with measurement
+Delay/String2             : Delay with measurement
+Delay/String3             : format : HH:MM:SS.MMM
+StreamSize                : Stream size in bytes
+StreamSize/String         : Streamsize in with percentage value
+StreamSize/String1        : Streamsize with measurement
+StreamSize/String2        : Streamsize with measurement
+StreamSize/String3        : Streamsize with measurement
+StreamSize/String4        : Streamsize with measurement
+StreamSize/String5        : Streamsize in with percentage value
+StreamSize_Proportion     : Stream size divided by file size
+Alignment                 : How this stream file is aligned in the container
+Alignment/String
+Title                     : Name of the track
+Encoded_Application       : Software. Identifies the name of the software package used to create the file, such as Microsoft WaveEdit.
+Encoded_Application/Url   : Software. Identifies the name of the software package used to create the file, such as Microsoft WaveEdit.
+Encoded_Library           : Software used to create the file
+Encoded_Library/String    : Software used to create the file
+Encoded_Library/Name      : Info from the software
+Encoded_Library/Version   : Version of software
+Encoded_Library/Date      : Release date of software
+Encoded_Library_Settings  : Parameters used by the software
+Language                  : Language (ISO 639-1, 2 letters)
+Language/String           : Language (full)
+Language_More             : More info about Language (e.g. Swiss German)
+Encoded_Date              : UTC time that the encoding of this item was completed began.
+Tagged_Date               : UTC time that the tags were done for this item.
+Encryption
+
+Audio
+Count                     : Number of objects available in this stream
+StreamCount               : Number of streams of this kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : The ID of this stream in this file
+ID/String                 : The ID of this stream in this file
+UniqueID                  : A unique ID for this stream, should be copied with stream copy
+MenuID                    : The menu ID for this stream in this file
+MenuID/String             : The menu ID for this stream in this file
+Format                    : Format used
+Format/Info               : Info about the format
+Format/Url                : Homepage of this format
+Format_Version            : Version of this format
+Format_Profile            : Profile of this Format
+Format_Settings           : Settings needed for decoder used, summary
+Format_Settings_SBR
+Format_Settings_SBR/String
+Format_Settings_PS
+Format_Settings_PS/String
+Format_Settings_Floor
+Format_Settings_Firm
+Format_Settings_Endianness
+Format_Settings_Sign
+Format_Settings_Law
+Format_Settings_ITU
+MuxingMode                : How this stream is muxed in the container
+CodecID                   : Codec ID (found in some containers)
+CodecID/Info              : Info about codec ID
+CodecID/Hint              : Hint/popular name for this codec ID
+CodecID/Url               : Homepage for more details about this codec ID
+CodecID_Description       : Manual description given by the container
+Codec                     : Deprecated, do not use in new projects
+Codec/String              : Deprecated, do not use in new projects
+Codec/Family              : Deprecated, do not use in new projects
+Codec/Info                : Deprecated, do not use in new projects
+Codec/Url                 : Deprecated, do not use in new projects
+Codec/CC                  : Deprecated, do not use in new projects
+Codec_Description         : Deprecated, do not use in new projects
+Codec_Profile             : Deprecated, do not use in new projects
+Codec_Settings            : Deprecated, do not use in new projects
+Codec_Settings_Automatic  : Deprecated, do not use in new projects
+Codec_Settings_Floor      : Deprecated, do not use in new projects
+Codec_Settings_Firm       : Deprecated, do not use in new projects
+Codec_Settings_Endianness : Deprecated, do not use in new projects
+Codec_Settings_Sign       : Deprecated, do not use in new projects
+Codec_Settings_Law        : Deprecated, do not use in new projects
+Codec_Settings_ITU        : Deprecated, do not use in new projects
+Duration                  : Play time of the stream
+Duration/String           : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String1          : Play time in format : HHh MMmn SSs MMMms, XX omited if zero
+Duration/String2          : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String3          : Play time in format : HH:MM:SS.MMM
+BitRate_Mode              : Bit rate mode (VBR, CBR)
+BitRate_Mode/String       : Bit rate mode (Constant, Variable)
+BitRate                   : Bit rate in bps
+BitRate/String            : Bit rate (with measurement)
+BitRate_Minimum           : Minimum Bit rate in bps
+BitRate_Minimum/String    : Minimum Bit rate (with measurement)
+BitRate_Nominal           : Nominal Bit rate in bps
+BitRate_Nominal/String    : Nominal Bit rate (with measurement)
+BitRate_Maximum           : Maximum Bit rate in bps
+BitRate_Maximum/String    : Maximum Bit rate (with measurement)
+Channel(s)                : Number of channels
+Channel(s)/String         : Number of channels (with measurement)
+ChannelPositions          : Position of channels
+ChannelPositions/String2  : Position of channels (x/y.z format)
+SamplingRate              : Sampling rate
+SamplingRate/String       : in KHz
+SamplingCount             : Frame count
+Resolution                : Resolution in bits (8, 16, 20, 24)
+Resolution/String         :  n bits
+CompressionRatio          : Current stream size divided by uncompressed stream size
+Delay                     : Delay fixed in the stream (relative)
+Delay/String              : Delay in format : XXx YYy only, YYy omited if zero
+Delay/String1             : Delay in format : HHh MMmn SSs MMMms, XX omited if zero
+Delay/String2             : Delay in format : XXx YYy only, YYy omited if zero
+Delay/String3             : Delay in format : HH:MM:SS.MMM
+Video_Delay               : Delay fixed in the stream (absolute / video)
+Video_Delay/String
+Video_Delay/String1
+Video_Delay/String2
+Video_Delay/String3
+Video0_Delay              : Deprecated, do not use in new projects
+Video0_Delay/String       : Deprecated, do not use in new projects
+Video0_Delay/String1      : Deprecated, do not use in new projects
+Video0_Delay/String2      : Deprecated, do not use in new projects
+Video0_Delay/String3      : Deprecated, do not use in new projects
+ReplayGain_Gain           : The gain to apply to reach 89dB SPL on playback
+ReplayGain_Gain/String
+ReplayGain_Peak           : The maximum absolute peak value of the item
+StreamSize                : Streamsize in bytes
+StreamSize/String         : Streamsize in with percentage value
+StreamSize/String1
+StreamSize/String2
+StreamSize/String3
+StreamSize/String4
+StreamSize/String5        : Streamsize in with percentage value
+StreamSize_Proportion     : Stream size divided by file size
+Alignment                 : How this stream file is aligned in the container
+Alignment/String          : Where this stream file is aligned in the container
+Interleave_VideoFrames    : Between how many video frames the stream is inserted
+Interleave_Duration       : Between how much time (ms) the stream is inserted
+Interleave_Duration/Strin : Between how much time and video frames the stream is inserted (with measurement)
+Interleave_Preload        : How much time is buffered before the first video frame
+Interleave_Preload/String : How much time is buffered before the first video frame (with measurement)
+Title                     : Name of the track
+Encoded_Library           : Software used to create the file
+Encoded_Library_Settings  : Parameters used by the software
+Language                  : Language (ISO 639-1, 2 letters)
+Language/String           : Language (full)
+Language_More             : More info about Language (e.g. Swiss German or Director's Comment)
+Encoded_Date              : UTC time that the encoding of this item was completed began.
+Tagged_Date               : UTC time that the tags were done for this item.
+Encryption
+
+Text
+Count                     : Count of objects available in this stream
+StreamCount               : Count of streams of that kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : A ID for this stream in this file
+ID/String                 : A ID for this stream in this file
+UniqueID                  : A unique ID for this stream, should be copied with stream copy
+MenuID                    : A menu ID for this stream in this file
+MenuID/String             : A menu ID for this stream in this file
+Format                    : Format used
+Format/Info               : Info about Format
+Format/Url                : Link
+CodecID                   : Codec ID (found in some containers)
+CodecID/Info              : Info about codec ID
+CodecID/Hint              : A hint for this codec ID
+CodecID/Url               : A link for more details about this codec ID
+CodecID_Description       : Manual description given by the container
+Codec                     : Deprecated
+Codec/String              : Deprecated
+Codec/Info                : Deprecated
+Codec/Url                 : Deprecated
+Codec/CC                  : Deprecated
+Duration                  : Play time of the stream
+Duration/String           : Play time (formated)
+Duration/String1          : Play time in format : HHh MMmn SSs MMMms, XX omited if zero
+Duration/String2          : Play time in format : XXx YYy only, YYy omited if zero
+Duration/String3          : Play time in format : HH:MM:SS.MMM
+BitRate_Mode              : Bit rate mode (VBR, CBR)
+BitRate_Mode/String       : Bit rate mode (VBR, CBR)
+BitRate                   : Bit rate in bps
+BitRate/String            : Bit rate (with measurement)
+Width                     : Width
+Width/String
+Height                    : Height
+Height/String
+FrameCount                : Frame count
+Resolution
+Resolution/String
+Delay                     : Delay fixed in the stream (relative)
+Delay/String
+Delay/String1
+Delay/String2
+Delay/String3
+Video_Delay               : Delay fixed in the stream (absolute / video)
+Video_Delay/String
+Video_Delay/String1
+Video_Delay/String2
+Video_Delay/String3
+Video0_Delay              : Deprecated
+Video0_Delay/String       : Deprecated
+Video0_Delay/String1      : Deprecated
+Video0_Delay/String2      : Deprecated
+Video0_Delay/String3      : Deprecated
+StreamSize                : Stream size in bytes
+StreamSize/String
+StreamSize/String1
+StreamSize/String2
+StreamSize/String3
+StreamSize/String4
+StreamSize/String5        : With proportion
+StreamSize_Proportion     : Stream size divided by file size
+Title                     : Name of the track
+Language                  : Language (2 letters)
+Language/String           : Language (full)
+Language_More             : More info about Language (director's comment...)
+Summary
+Encoded_Date              : The time that the encoding of this item was completed began.
+Tagged_Date               : The time that the tags were done for this item.
+Encryption
+
+Chapters
+Count                     : Count of objects available in this stream
+StreamCount               : Count of streams of that kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : A ID for this stream in this file
+ID/String                 : A ID for this stream in this file
+UniqueID                  : A unique ID for this stream, should be copied with stream copy
+Format                    : Format used
+Format/Info               : Info about Format
+Format/Url                : Link
+Codec                     : Deprecated
+Codec/String              : Deprecated
+Codec/Info                : Deprecated
+Codec/Url                 : Deprecated
+Total                     : Total number of chapters
+Title                     : Name of the track
+Language                  : Language (2 letters)
+Language/String           : Language (full)
+
+Image
+Count                     : Count of objects available in this stream
+StreamCount               : Count of streams of that kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : A ID for this stream in this file
+UniqueID                  : A unique ID for this stream, should be copied with stream copy
+Title                     : Name of the track
+Format                    : Format used
+Format/Info               : Info about Format
+Format/Url                : Link
+Format_Profile            : Profile of the Format
+CodecID                   : Codec ID (found in some containers)
+CodecID/Info              : Info about codec ID
+CodecID/Hint              : A hint for this codec ID
+CodecID/Url               : A link for more details about this codec ID
+CodecID_Description       : Manual description given by the container
+Codec                     : Deprecated
+Codec/String              : Deprecated
+Codec/Family              : Deprecated
+Codec/Info                : Deprecated
+Codec/Url                 : Deprecated
+Width                     : Width
+Width/String
+Height                    : Height
+Height/String
+Resolution
+Resolution/String
+StreamSize                : Stream size in bytes
+StreamSize/String
+StreamSize/String1
+StreamSize/String2
+StreamSize/String3
+StreamSize/String4
+StreamSize/String5        : With proportion
+StreamSize_Proportion     : Stream size divided by file size
+Language                  : Language (2 letters)
+Language/String           : Language (full)
+Summary
+Encoded_Date              : The time that the encoding of this item was completed began.
+Tagged_Date               : The time that the tags were done for this item.
+Encryption
+
+Menu
+Count                     : Count of objects available in this stream
+StreamCount               : Count of streams of that kind available
+StreamKind                : Stream type name
+StreamKind/String         : Stream type name
+StreamKindID              : Number of the stream (base=0)
+StreamKindPos             : When multiple streams, number of the stream (base=1)
+Inform                    : Last **Inform** call
+ID                        : A ID for this stream in this file
+ID/String                 : A ID for this stream in this file
+UniqueID                  : A unique ID for this stream, should be copied with stream copy
+MenuID                    : A menu ID for this stream in this file
+MenuID/String             : A menu ID for this stream in this file
+Format                    : Format used
+Format/Info               : Info about Format
+Format/Url                : Link
+Codec                     : Deprecated
+Codec/String              : Deprecated
+Codec/Info                : Deprecated
+Codec/Url                 : Deprecated
+List                      : List of programs available
+List/String
+Title                     : Name of this menu
+Language                  : Language (2 letters)
+Language/String           : Language (full)
+Language_More             : More info about Language (director's comment...)
+ServiceName
+ServiceChannel
+Service/Url
+ServiceProvider
+ServiceProviderr/Url
+ServiceType

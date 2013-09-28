@@ -1,4 +1,0 @@
-#Begin-Change Wallpaper
-FinalPaper := "Wallpaper.BMP"
-DllCall( "SystemParametersInfo", UInt, 0x14, UInt, 0, Str, FinalPaper, UInt, 1 )
-#End-Change Wallpaper
