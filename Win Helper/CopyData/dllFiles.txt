@@ -1,3 +1,0 @@
-;; ReplacerScript
-
-shimgvw.dll,shimgvw.dll
