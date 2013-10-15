@@ -2,10 +2,10 @@
 		A nifty script that i use to sync my gitHub code
 */
 
-#NoEnv  						;Recommended for performance.
-#SingleInstance Force			;Make single instance application.
-#Persistent						;Keep running until the user asks to exit.
-#NoTrayIcon						;Ensures that no icon is visible at the start.
+#NoEnv  									;Recommended for performance.
+#SingleInstance Force				;Make single instance application.
+#Persistent								;Keep running until the user asks to exit.
+#NoTrayIcon								;Ensures that no icon is visible at the start.
 SetWorkingDir %A_ScriptDir%		;Ensures a consistent starting directory.
 
 ;########################################################## Global Variables
@@ -38,10 +38,10 @@ GuiControl, +Default, syncButton
 ; Core logic
 
 Loop, Parse, sources, |
-{	
+{
 	SplitPath, A_LoopField, folderName
 	destDir := destRoot "\" folderName
-	
+
 	SetWorkingDir, %A_LoopField%
 	recursiveSync("*.*")
 }
@@ -69,19 +69,19 @@ recursiveSync(filePat)
 			;Create destination directory if it doesn't exists
 			IfNotExist, %destDir%\%A_LoopFileFullPath%
 				FileCreateDir, %destDir%\%A_LoopFileFullPath%
-				
+
 			; Recursion into current directory
 			recursiveSync(A_LoopFileFullPath . "\*.*")
 		}
-	  
+
 		; It's a file
 		Else
 		{
 			toCopyFlag := False
-			
+
 			;Inclusions based on Extensions
 			SplitPath, A_LoopFileLongPath,,, thisFileExt
-			
+
 			If InStr(legalExtensions,thisFileExt)
 			{
 				; Checks if file exists in destination directory
@@ -96,7 +96,7 @@ recursiveSync(filePat)
 						toCopyFlag := True
 				}
 			}
-			
+
 			; Copy file
 			If toCopyFlag
 				FileCopy, %A_LoopFileLongPath%, %destDir%\%A_LoopFileFullPath%, 1
