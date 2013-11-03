@@ -22,8 +22,8 @@ SendMode Input  					;Recommended due to its superior speed and reliability.
 Version = 0.9
 
 ;########################################################### Extract Dependencies
-FileInstall, Main.ico, %A_Temp%\Main.tmp, 1
-Menu, Tray, Icon, %A_Temp%\Main.tmp
+; FileInstall, Main.ico, %A_Temp%\Main.tmp, 1
+; Menu, Tray, Icon, %A_Temp%\Main.tmp
 ;Menu, Tray, Icon
 
 ;Let the user know that the utility has started
