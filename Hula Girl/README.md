@@ -9,3 +9,5 @@ The script uses GDI+ to create a GUI from an image and then continuously changes
 You can run multiple instances, drag the GUI to reposition, Right Click on the GUI to play/pause animation.
 
 Press Esc to exit.
+
+![Screenshot](Screenshots\Shot.png)

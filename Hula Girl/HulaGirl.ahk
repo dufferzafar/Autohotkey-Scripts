@@ -4,12 +4,12 @@
 */
 
 #NoEnv
-#SingleInstance Off			;Make Multi Instance Application.
-#Persistent						;Keep running until the user asks to exit.
-#NoTrayIcon						;Ensures that no icon is visible at the start.
-SetWorkingDir %A_ScriptDir%		;Ensures a consistent starting directory.
+#SingleInstance Off
+#Persistent
+#NoTrayIcon
+SetWorkingDir %A_ScriptDir%
 
-SetBatchLines, -1				;We Need Speed
+SetBatchLines, -1
 
 If !pToken := Gdip_Startup()
 {
