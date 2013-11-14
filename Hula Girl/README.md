@@ -10,4 +10,4 @@ You can run multiple instances, drag the GUI to reposition, Right Click on the G
 
 Press Esc to exit.
 
-![Screenshot](Screenshots\Shot.png)
+![Screenshot](/Screenshots/Shot.png)
