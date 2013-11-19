@@ -1,8 +1,8 @@
 #SingleInstance, Force
-SetWorkingDir %A_ScriptDir%  
+SetWorkingDir %A_ScriptDir%
 SetFormat, Float, 6.2
 
-DllCall( "LoadLibrary", Str,"D:\I, Coder\My Projects\# Dev Zone\vidInfo\mediainfo.Dll" )
+DllCall( "LoadLibrary", Str,"mediainfo.Dll" )
 
 totalDuration := 0
 
@@ -10,11 +10,11 @@ InputBox, fType, Enter FileType, Please enter the extension of the filetype that
 
 If !(fType)
 	return
-	
+
 Loop, *.%fType%
 {
 	LoopFileDuration := Media_GetVideoDuration( A_LoopFileFullPath )
-	
+
 	totalDuration += Media_GetVideoDuration( A_LoopFileFullPath )
 }
 
@@ -22,9 +22,6 @@ durationMins :=  totalDuration/(1000*60)
 durationHours := durationMins//60
 
 Msgbox, %  durationMins " `n " durationHours " hrs " (durationMins - 60*durationHours) " mins "
-
-;###############################################################################
-;###############################################################################
 
 Media_GetVideoDuration( VidFil ) {
  hnd := MediaInfo_New()

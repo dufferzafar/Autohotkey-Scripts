@@ -6,11 +6,11 @@ by dufferzafar
 5:28 PM Monday, March 18, 2013
 */
 
-#NoEnv  						;Recommended for performance.
-#SingleInstance Force			;Make single instance application.
-#Persistent						;Keep running until the user asks to exit.
-#NoTrayIcon						;Ensures that no icon is visible at the start.
-SetWorkingDir %A_ScriptDir%		;Ensures a consistent starting directory.
+#NoEnv
+#SingleInstance Force
+#Persistent
+#NoTrayIcon
+SetWorkingDir %A_ScriptDir%
 
 SetBatchLines -1
 
