@@ -25,7 +25,7 @@ SetBatchLines -1
 wplFile := "LP.wpl"
 
 ;The Destination Directory
-destRoot := "J:\Music\Landon"
+destRoot := "D:\Harry"
 
 ;Variables
 musicDir := "C:\Users\dufferzafar\Downloads\Music"
