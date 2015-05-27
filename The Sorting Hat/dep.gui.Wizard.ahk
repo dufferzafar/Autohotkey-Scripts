@@ -79,3 +79,7 @@ Back:
     GuiControl, Choose, TabID, %ActiveTab%
   }
 Return
+
+GuiClose:
+    Gui, 1: Hide
+Return
