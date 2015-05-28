@@ -11,6 +11,9 @@ Without Irfanview the original version won't work.
 ## Screenshots
 
 ![Tray Icon](screenshots/tray.png)
+
+---
+
 ![Save File Tab](screenshots/tab-save-file.png)
 ![Screenshots Tab](screenshots/tab-screenshots.png)
 ![Effects Tab](screenshots/tab-effects.png)
